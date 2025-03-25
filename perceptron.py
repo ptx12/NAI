@@ -62,8 +62,8 @@ def perceptron(learning_rate, epohs, test_data, learn_data,theta=None, starting_
 #rint("THETA:", theta)
 
 
-learn_data = load_data("wdbc.test.data")
-test_data = load_data("wdbc.data")
+learn_data = load_data("perceptron.test.data")
+test_data = load_data("perceptron.data")
 
 def run_perceptron(epoch):
     _, _, accuracy = perceptron(learning_rate=0.5, epohs=epoch, learn_data=learn_data, test_data=test_data, theta=0, starting_weight=0.01)
@@ -73,7 +73,7 @@ def run_perceptron(epoch):
 
 if __name__ == "__main__":
     accuracies_epohs = {}
-    graph_range = range(10, 1000, 1)
+    graph_range = range(10, 10000, 10)
 
     with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:
         results = pool.map(run_perceptron, graph_range)
@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
     plt.xlabel('Epochs', fontsize=12)
     plt.ylabel('Accuracy (%)', fontsize=12)
-    plt.title('Accuracy Over Epochs', fontsize=14)
+    plt.title('Accuracy over Epohs', fontsize=14)
 
     plt.grid(True, linestyle='--', alpha=0.6)
     plt.ylim(min(accuracies) - 0.5, max(accuracies) + 0.5)

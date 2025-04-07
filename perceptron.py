@@ -62,8 +62,8 @@ def perceptron(learning_rate, epohs, test_data, learn_data,theta=None, starting_
 #rint("THETA:", theta)
 
 
-learn_data = load_data("perceptron.test.data")
-test_data = load_data("perceptron.data")
+#learn_data = load_data("perceptron.test.data")
+#test_data = load_data("perceptron.data")
 
 def run_perceptron(epoch):
     _, _, accuracy = perceptron(learning_rate=0.5, epohs=epoch, learn_data=learn_data, test_data=test_data, theta=0, starting_weight=0.01)

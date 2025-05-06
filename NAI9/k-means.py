@@ -1,5 +1,6 @@
 import random
 import math
+from collections import Counter
 
 def k_means_data_wrapper(data):
     return [x[:-1] for x in data]
@@ -24,11 +25,11 @@ def k_means(k, dataset):
         iteration += 1
         clusters = [[] for _ in range(k)]
         for point in dataset:
-            distances = [euclidean_distance(point, c) for c in centroids]
+            distances = [euclidean_distance(point[:-1], c) for c in centroids]
             min_idx = distances.index(min(distances))
             clusters[min_idx].append(point)
         total = sum(
-            euclidean_distance(point, centroids[i])
+            euclidean_distance(point[:-1], centroids[i])
             for i, cluster in enumerate(clusters)
             for point in cluster
         )
@@ -36,7 +37,7 @@ def k_means(k, dataset):
         new_centroids = []
         for cluster in clusters:
             if cluster:
-                new_centroids.append(calc_centroid(cluster))
+                new_centroids.append(calc_centroid([x[:-1] for x in cluster]))
             else:
                 new_centroids.append(random.choice(dataset))
         if all(
@@ -48,11 +49,11 @@ def k_means(k, dataset):
     return clusters
 
 if __name__ == "__main__":
-    data = load_data("iris.data")
-    features = k_means_data_wrapper(data)
-    k = 10
-    clusters = k_means(k, features)
+    k = 3
+    clusters = k_means(k, load_data("iris.data"))
     for i, cluster in enumerate(clusters):
-        print(f"GROUP NUM:  {i+1}:")
+        class_counter = Counter([x[-1] for x in cluster])
+        print(class_counter)
+        print(f"GROUP NUM:  {i+1} | CLASS NAME: {max(class_counter)}")
         for point in cluster:
             print(point)

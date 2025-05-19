@@ -1,3 +1,3 @@
-C:/Users/s31835/Desktop/NAI/NAI10/cmake-build-debug/CMakeFiles/NAI10.dir
-C:/Users/s31835/Desktop/NAI/NAI10/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/s31835/Desktop/NAI/NAI10/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/jakub/Desktop/PJATK/NAI/NAI10/cmake-build-debug/CMakeFiles/NAI10.dir
+C:/Users/jakub/Desktop/PJATK/NAI/NAI10/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/jakub/Desktop/PJATK/NAI/NAI10/cmake-build-debug/CMakeFiles/rebuild_cache.dir

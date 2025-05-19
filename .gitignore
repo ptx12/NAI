@@ -73,3 +73,23 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# CLion / CMake build output
+cmake-build-*/
+
+# CMake intermediate files
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+
+# CMake File-API replies
+**/.cmake/api/
+
+# Ninja build files
+**/build.ninja
+**/.ninja_deps
+**/.ninja_log
+
+# CTest / Testing temporary logs
+**/Testing/Temporary/

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 
-const std::size_t N = 32;
+const int N = 32;
 int weights[N] = {
         3, 1, 6, 10, 1, 4, 9, 1,
         7, 2, 6, 1, 6, 2, 2, 4,
@@ -35,6 +35,7 @@ int main() {
             bestValue = v;
             bestWeight = w;
             bestMask = mask;
+            std::cout << "new best value found: " << bestValue << "|" << bestWeight << " - " << std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count() << std::endl;
         }
     }
     auto end = std::chrono::high_resolution_clock::now();

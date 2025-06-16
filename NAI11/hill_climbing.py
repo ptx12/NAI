@@ -50,5 +50,5 @@ if __name__ == "__main__":
     values  = [7,4,9,18,9,15,4,2,6,13,18,12,12,16,19,19,10,16,14,3,14,4,15,7,5,10,10,13,19,9,8,5]
     capacity = 75
     best_val, best_wt, solution = hill_climb(weights, values, capacity, restarts=10)
-    print(f"Hill Climbing result: value={best_val}, weight={best_wt}")
-    print("Solution vector:", solution)
+    print(f"hc: value={best_val}, weight={best_wt}")
+    print("solution vector:", solution)

@@ -1,10 +1,10 @@
 from typing import List, Tuple
 from collections import Counter
+import sys
+from lol import com, a
 
 test_units = [
-    "AAAABBBBBBCCCDDEEFFG",
-    "AABCCCDDEEEFFFFFFFFFFFFGGG",
-    "AAABBBBCDDEEFFFFFFFFFFFG"
+
 ]
 
 def build_codes(tree, prefix="", codebook=None):
@@ -35,9 +35,17 @@ def build_tree(forest):
 def huffman(input: str) -> List[Tuple[int, str]]:
     initial_forest = sorted([(freq, char) for char, freq in Counter(input).items()])
     codes = build_codes(build_tree(forest=initial_forest))
+    print(codes)
     return ''.join(codes[char] for char in input)
 
 
 if __name__ == "__main__":
+    print(sys.getrecursionlimit())
+    sys.setrecursionlimit(0)
+
+    #with open('NAI12/a.txt', 'r') as o:
+        #test_units.append(o.readlines()[0])
+    
+    test_units.append(com(10000))
     for string in test_units:
-        print(huffman(string))
+        huffman(string)
